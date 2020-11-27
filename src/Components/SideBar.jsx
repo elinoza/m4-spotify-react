@@ -1,8 +1,9 @@
-import React, { Component }from "react";
+import React from "react";
 import { withRouter,Link } from "react-router-dom";
 import {Navbar} from "react-bootstrap"
 
 class SideBar extends React.Component {
+
     render(){
         return(
             <>

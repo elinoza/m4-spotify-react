@@ -18,10 +18,13 @@ h5 {
 
 .btn-sign,
 .btn-login,
-body {
+.body {
   font-family: proxima-nova, sans-serif;
   font-weight: 600;
   font-style: normal;
+ 
+  font-size: 14px;
+  color: white;
 }
 #side-bar.nav {
   background-color: black;

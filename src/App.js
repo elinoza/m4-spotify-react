@@ -3,26 +3,33 @@ import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {Row,Col} from 'react-bootstrap'
+
 
 import Player from "./Components/Player.jsx"
-import Home from "./Components/Home.jsx"
+import Home from "./Components/Home"
 import SideBar from "./Components/SideBar.jsx"
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 
 
 function App() {
   return (
-    <>
+   
     <Router>
- 
+ <Row>
+   <Col md={3} lg={2}>
       <SideBar/>
-      <Route path="/" exact Component= {Home}/> 
+  </Col>
+  <Col md={9} lg={10}>
+      <Route path="/" exact component= {Home}/> 
+  </Col>
+</Row>
       <Player/>
-      <Route path="/library" exact component={Library} />
-      <Route path="/search" exact component={Search} />
+
     </Router>
     
-    </>
+    
   );
 }
 
