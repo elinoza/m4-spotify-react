@@ -1,6 +1,7 @@
 
 import React from "react";
-import {Container,Row} from 'react-bootstrap'
+import './album-styles.css';
+import {Container,Row,Col,Card,ListGroup} from 'react-bootstrap'
 
 
 
@@ -9,14 +10,15 @@ class Albumpage extends React.Component {
 
     state = {
        
-        album: [],
+        album: {},
+        tracks:[]
       };
     
       
     
       fetchData = async (albumid) => {
-        const url = "https://deezerdevs-deezer.p.rapidapi.com/";
-        const response = await fetch(url + "/album/" + albumid,{
+        const url = "https://deezerdevs-deezer.p.rapidapi.com/album/";
+        const response = await fetch(url + albumid,{
             method: "GET",
             headers: {
                 "x-rapidapi-key": "9686a97369mshc255201739db656p1f676cjsn793030cdeca7",
@@ -25,8 +27,8 @@ class Albumpage extends React.Component {
         });
     
         const album = await response.json();
-        this.setState({ album:album}, () =>
-        console.log(this.state.album)
+        this.setState({ album:album,tracks:album.tracks.data}, () =>
+        console.log(this.state.album, this.state.tracks)
       );
         
       };
@@ -40,15 +42,56 @@ class Albumpage extends React.Component {
    
     render(){
         // let id=this.props.match.params.id
-        // console.log(id)
+      
  
 
         return(
             <Container>
+                    <Row>
+                     <Col md={3} lg={2}>
+                            <div>space</div>
+                        </Col>
+                        <Col md={9} lg={10}>
+                        <Row className="mt-4 mb-4">
+                        <Col md={5} >
+                        <Card className=" bg-transparent border-0 text-center body"  >
+                                <Card.Img variant="top" src={this.state.album.cover} />
+                                <Card.Body>
+                                    <Card.Title>{this.state.album.title}</Card.Title>
+                                    <Card.Text className="text-muted text-truncate text-overflow">
+                                 
+                                    </Card.Text>
+                    
+                        </Card.Body>
+                        </Card> 
 
-            <Row className="mt-4 mb-4">
-               fgdfg
+
+                        </Col>
+                        <Col md={6} >
+
+                        <ListGroup className="tracklist pr-3 p-1">
+
+                        {this.state.tracks.map((song) => (
+                
+            
+                        <ListGroup.Item className="d-flex">
+                        <i class="align-self-start fas fa-music mr-2"></i>
+
+                        <div className="d-inline align-self-start">
+                        <p>{song.title}</p>
+                        <p className="subtitle">{song.artist.name}</p>
+                        </div>
+                        <p className="d-inline subtitle ml-auto">{song.duration}</p></ListGroup.Item>
+                        ))}
+                        
+                        </ListGroup>
+                        </Col>
+                        </Row>
+                        
+                        </Col>
                 </Row>
+
+            
              </Container>
         )
     }

@@ -11,7 +11,7 @@ class Album extends React.Component {
         return(
 
 
-        <Col xs={"12"} md={"4"} lg={"2"} className="px-2">
+        <Col xs={12} md={4} lg={2} className="px-2">
             <Card className=" bg-transparent border-0 text-center body" 
             onClick={() =>this.props.history.push(`/albumpage/${data.album.id}`)
         } >
