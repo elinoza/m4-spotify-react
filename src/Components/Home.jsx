@@ -75,9 +75,9 @@ url="https://deezerdevs-deezer.p.rapidapi.com/"
         return(
             <Container>
 
-            <Gallery title="jazz" albums="this.state.jazz" />
-            <Gallery title="classical"  albums="this.state.classical"/>
-            <Gallery title="rap" albums="this.state.rap" />
+            <Gallery title="jazz" albums={this.state.jazz} />
+            <Gallery title="classical"  albums={this.state.classical}/>
+            <Gallery title="rap" albums={this.state.rap}/>
             </Container>
         )
     }
