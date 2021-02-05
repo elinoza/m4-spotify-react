@@ -99,16 +99,14 @@ body{
 
 
  
-  ul.tracklist li{
-      list-style:none;
+  .tracklist {
+    
      margin-bottom:25px;
-     padding:5px;
+     
   }
 
- ul.tracklist p{
-     margin:0px;
- }
- ul.tracklist p:first-of-type{
+ 
+ .tracklist p:first-of-type{
      color:rgb(231, 230, 230)
  }
 
@@ -116,7 +114,7 @@ body{
     font-size:0.8em;
     color:rgb(158, 158, 158)
 }
-ul.tracklist a{
+.tracklist a{
     color:rgb(158, 158, 158)
 }
 
@@ -126,8 +124,7 @@ button.btn-play {
     border-radius: 18px;    
     font-size: 12px;
     color:white;
-   
-         
+       
 }
 button.btn-play:hover{
   height:3.2em;

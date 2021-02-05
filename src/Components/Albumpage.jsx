@@ -67,24 +67,24 @@ class Albumpage extends React.Component {
 
 
                         </Col>
-                        <Col md={6} >
+                        <Col md={6}  >
 
-                        <ListGroup className="tracklist pr-3 p-1">
+                        <div className="tracklist pr-3 p-1 " style={{borderBottom:"1px solid gray" }}>
 
                         {this.state.tracks.map((song) => (
                 
             
-                        <ListGroup.Item className="d-flex">
+                        <div className="d-flex">
                         <i class="align-self-start fas fa-music mr-2"></i>
 
                         <div className="d-inline align-self-start">
                         <p>{song.title}</p>
                         <p className="subtitle">{song.artist.name}</p>
                         </div>
-                        <p className="d-inline subtitle ml-auto">{song.duration}</p></ListGroup.Item>
+                        <p className="d-inline subtitle ml-auto">{song.duration}</p></div>
                         ))}
                         
-                        </ListGroup>
+                        </div>
                         </Col>
                         </Row>
                         
